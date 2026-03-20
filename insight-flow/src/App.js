@@ -1,10 +1,10 @@
 
 import './App.css';
-import Sidebar from 'components/Sidebar/Sidebar';
+import Layout from 'pages/Layout';
 
 function App() {
   return (
-    <Sidebar />
+    <Layout />
   );
 }
 

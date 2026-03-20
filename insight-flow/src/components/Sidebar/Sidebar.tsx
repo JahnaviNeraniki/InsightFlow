@@ -1,6 +1,7 @@
 import React from 'react'
 import SidebarItem from './SidebarItem'
-import { menuItems, preferences } from './menu'
+import { menuItems, preferences } from './menu';
+import 'components/Sidebar/Sidebar.css';
 
 const Sidebar = () => {
   return (

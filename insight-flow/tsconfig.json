@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES6",                           // modern JS output
-    "module": "ESNext",                        // module system
-    "lib": ["dom", "dom.iterable", "esnext"], // needed for JSX and DOM types
-    "jsx": "react-jsx",                        // enables JSX parsing
-    "esModuleInterop": true,                   // allows default imports
-    "allowSyntheticDefaultImports": true,     // same as above
-    "strict": true,                            // enable strict type checks
-    "moduleResolution": "node",                // resolves node modules
-    "forceConsistentCasingInFileNames": true, // prevents file case issues
-    "skipLibCheck": true                       // ignores type checking in node_modules
+    "target": "ES6",
+    "module": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
