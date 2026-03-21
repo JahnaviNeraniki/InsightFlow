@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg-color: #1c202c;
+  --secondary-bg-color: #23283b;
+  --menu-text-color: #abaec1;
+  --active-menu-text-color: #646875;
+  --active-bg-color: #dbe0ea;
+  --subheading-text-color: #dbdeed;
+  --heading-text-color: #d8dce9;
+}
+
+[data-theme="light"] {
+  --primary-bg-color: #121212;
+  --secondary-bg-color: #1c202c;
+  --menu-text-color: #ffffff;
+  --active-menu-text-color: #cccccc;
+}

@@ -2,43 +2,57 @@ import React from 'react'
 import SidebarItem from './SidebarItem'
 import { menuItems, preferences } from './menu';
 import 'components/Sidebar/Sidebar.css';
+import { ReactComponent as Darklogo } from 'assets/insightflow-logo-dark.svg';
+import { ReactComponent as Lightlogo } from 'assets/insightflow-logo-light.svg';
+import { List, ListSubheader } from '@mui/material';
 
 const Sidebar = () => {
-  return (
-    <div className='sidebar'>
-        <h2 className="logo">InsightFlow</h2>
-        <div className='menu'>
-            <h2>Manage</h2>
-            {menuItems.map((item, index) => {
-                return(
-                    <SidebarItem
-                        key={item.id}
-                        active={index === 1}
-                        label={item.label}
-                        icon={item.icon}
-                    />
+    return (
+        <>
+            <Darklogo />
+            <List
+                className='list'
+                subheader={
+                    <ListSubheader component="div" className='subheading'>
+                        Manage
+                    </ListSubheader>
+                }
+            >
+                {menuItems.map((item, index) => {
+                    return (
+                        <SidebarItem
+                            key={item.id}
+                            active={index === 1}
+                            label={item.label}
+                            icon={item.icon}
 
-                )
-            })}
-        </div>
+                        />
 
-        <div className='menu'>
-            <h2>preferences</h2>
-            {preferences.map((item, index) => {
-                return(
-                    <SidebarItem
-                        key={item.id}
-                        active={index === 1}
-                        label={item.label}
-                        icon={item.icon}
-                    />
+                    )
+                })}
+            </List>
+            <List
+                className='list'
+                subheader={
+                    <ListSubheader component="div" className='subheading'>
+                        Preferences
+                    </ListSubheader>
+                }
+            >
+                {preferences.map((item, index) => {
+                    return (
+                        <SidebarItem
+                            key={item.id}
+                            active={index === 1}
+                            label={item.label}
+                            icon={item.icon}
+                        />
 
-                )
-            })}
-        </div>
-      
-    </div>
-  )
+                    )
+                })}
+            </List>
+        </>
+    )
 }
 
 export default Sidebar

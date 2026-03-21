@@ -1,24 +1,14 @@
-.sidebar {
-  width: 100%;
-  height: 100%;
-  background-color: #23283b;
-  /* background: var(--sidebar); */
-  color: var(--text-primary);
-  padding: 20px;
-}
-
-/* .sidebar h2 {
-  margin-top: 0;
-} */
 
 .logo {
   margin-bottom: 30px;
 }
 
-.menu {
+.list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: var(--secondary-bg-color);
+  color: var(--menu-text-color);
 }
 
 .sidebar-item {
@@ -29,11 +19,12 @@
   gap: 10px;
 }
 
-.sidebar-item:hover {
-  background: rgba(255, 255, 255, 0.05);
+.sidebar-item.active {
+  background: var(--active-bg-color);
+  color: var(--active-menu-text-color);
 }
 
-.sidebar-item.active {
-  background: var(--accent);
-  color: white;
+.subheading {
+  color: var(--subheading-text-color);
+  background-color: var(--secondary-bg-color);
 }
