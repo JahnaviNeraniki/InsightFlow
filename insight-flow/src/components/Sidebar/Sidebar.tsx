@@ -13,7 +13,10 @@ const Sidebar = () => {
             <List
                 className='list'
                 subheader={
-                    <ListSubheader component="div" className='subheading'>
+                    <ListSubheader component="div" sx={{
+                        backgroundColor: 'var(--secondary-bg-color)',
+                        color: 'var(--subheading-text-color)'
+                    }}>
                         Manage
                     </ListSubheader>
                 }
@@ -34,7 +37,10 @@ const Sidebar = () => {
             <List
                 className='list'
                 subheader={
-                    <ListSubheader component="div" className='subheading'>
+                    <ListSubheader component="div" sx={{
+                        backgroundColor: 'var(--secondary-bg-color)',
+                        color: 'var(--subheading-text-color)'
+                    }}>
                         Preferences
                     </ListSubheader>
                 }

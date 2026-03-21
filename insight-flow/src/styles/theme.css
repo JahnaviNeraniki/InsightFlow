@@ -15,8 +15,11 @@
 }
 
 [data-theme="light"] {
-  --primary-bg-color: #121212;
-  --secondary-bg-color: #1c202c;
-  --menu-text-color: #ffffff;
-  --active-menu-text-color: #cccccc;
+  --primary-bg-color: #f5f7fb;       /* main page background */
+  --secondary-bg-color: #ffffff;     /* sidebar / cards */
+  --menu-text-color: #4b5563;        /* normal text (gray-600) */
+  --active-menu-text-color: #111827; /* active text (almost black) */
+  --active-bg-color: #e0e7ff;        /* soft highlight (indigo tint) */
+  --subheading-text-color: #6b7280;  /* muted headings */
+  --heading-text-color: #111827;     /* main headings */
 }

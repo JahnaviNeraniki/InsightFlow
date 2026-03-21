@@ -1,27 +1,42 @@
 import React from 'react';
-import { List,ListItemButton , ListItemText , ListItemIcon , ListSubheader  } from '@mui/material';
+import { List, ListItemButton, ListItemText, ListItemIcon, ListSubheader, Switch } from '@mui/material';
 import { SvgIconComponent } from '@mui/icons-material';
-interface SidebarItemProps{
-    active: boolean;
-    label: string;
-    icon: SvgIconComponent;
+interface SidebarItemProps {
+  active: boolean;
+  label: string;
+  icon: SvgIconComponent;
 
 }
 
-const SidebarItem = ({ active, label, icon: Icon }: SidebarItemProps) => {
-  return (
-    // <div className={`sidebar-item ${active ? "active" : ""}`}>
-    //   <span className='icon'>{icon}</span>
-    //   <span>{label}</span>
-    // </div>
 
-      <ListItemButton>
-        <ListItemIcon>
-          <Icon />
-        </ListItemIcon>
-        <ListItemText primary={label} />
-      </ListItemButton>
-     
+const SidebarItem = ({ active, label, icon: Icon }: SidebarItemProps) => {
+  const [isDark, setIsDark] = React.useState(
+    document.documentElement.getAttribute("data-theme") === "dark"
+  );
+
+
+  const handleThemeChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const checked = event.target.checked;
+
+    setIsDark(checked);
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      checked ? "dark" : "light"
+    );
+  };
+  return (
+    <ListItemButton>
+      <ListItemIcon>
+        <Icon />
+      </ListItemIcon>
+      <ListItemText primary={label} />
+      {label === "Theme" && (
+        <Switch checked={isDark} onChange={handleThemeChanged} />
+      )}
+
+    </ListItemButton>
+
   )
 }
 
