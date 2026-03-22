@@ -3,13 +3,14 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SpeedIcon from '@mui/icons-material/Speed';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import SecurityIcon from '@mui/icons-material/Security';
-import LogoutIcon from '@mui/icons-material/Logout';
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import SecurityIcon from "@mui/icons-material/Security";
+import LogoutIcon from "@mui/icons-material/Logout";
 
-export const preferences = [
-  { id: 1, label: "Theme", icon: DarkModeIcon } ,
-  { id: 2, label: "Security", icon: SecurityIcon } ,
+export const getPreferences = (isDark: boolean) => [
+  { id: 1, label: "Theme", icon: isDark ? LightModeIcon : DarkModeIcon },
+  { id: 2, label: "Security", icon: SecurityIcon },
   { id: 3, label: "Logout", icon: LogoutIcon }
 ];
 

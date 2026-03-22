@@ -5,34 +5,21 @@ interface SidebarItemProps {
   active: boolean;
   label: string;
   icon: SvgIconComponent;
-
+  isDark?: boolean;
+  onThemeChanged?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 
-const SidebarItem = ({ active, label, icon: Icon }: SidebarItemProps) => {
-  const [isDark, setIsDark] = React.useState(
-    document.documentElement.getAttribute("data-theme") === "dark"
-  );
-
-
-  const handleThemeChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const checked = event.target.checked;
-
-    setIsDark(checked);
-
-    document.documentElement.setAttribute(
-      "data-theme",
-      checked ? "dark" : "light"
-    );
-  };
+const SidebarItem = ({ active, label, icon: Icon, isDark, onThemeChanged }: SidebarItemProps) => {
+ 
   return (
     <ListItemButton>
       <ListItemIcon>
-        <Icon />
+        <Icon className='icon'/>
       </ListItemIcon>
       <ListItemText primary={label} />
       {label === "Theme" && (
-        <Switch checked={isDark} onChange={handleThemeChanged} />
+        <Switch checked={isDark} onChange={onThemeChanged} />
       )}
 
     </ListItemButton>

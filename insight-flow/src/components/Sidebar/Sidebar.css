@@ -1,6 +1,6 @@
 
 .logo {
-  margin-bottom: 30px;
+  width: 100%;
 }
 
 .list {
@@ -9,6 +9,11 @@
   gap: 10px;
   background-color: var(--secondary-bg-color);
   color: var(--menu-text-color);
+}
+
+.icon {
+  color: var(--menu-text-color);
+
 }
 
 .sidebar-item {
