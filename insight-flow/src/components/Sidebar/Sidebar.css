@@ -13,7 +13,6 @@
 
 .icon {
   color: var(--menu-text-color);
-
 }
 
 .sidebar-item {
@@ -22,11 +21,36 @@
   cursor: pointer;
   display: flex;
   gap: 10px;
+  color: var(--menu-text-color) !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sidebar-item.active {
-  background: var(--active-bg-color);
-  color: var(--active-menu-text-color);
+.sidebar-item__icon-wrap {
+  min-width: 34px !important;
+  color: inherit !important;
+}
+
+.sidebar-item .MuiListItemText-primary {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-item--active.sidebar-item--dark {
+  background: #dbe0ea !important;
+  color: #1f2331 !important;
+}
+
+.sidebar-item--active.sidebar-item--dark .icon {
+  color: #1f2331 !important;
+}
+
+.sidebar-item--active.sidebar-item--light {
+  background: #1f2331 !important;
+  color: #eef1f8 !important;
+}
+
+.sidebar-item--active.sidebar-item--light .icon {
+  color: #eef1f8 !important;
 }
 
 .subheading {

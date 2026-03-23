@@ -9,10 +9,12 @@ import { List, ListSubheader } from '@mui/material';
 interface sidebarprops {
     isDark: boolean;
     onThemeChanged: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onItemChanged: (item:string) => void;
+    activeItem: string;
 }
 
-const Sidebar = ({ isDark, onThemeChanged }: sidebarprops) => {
-    const preferences = getPreferences(isDark)
+const Sidebar = ({ isDark, onThemeChanged, onItemChanged, activeItem }: sidebarprops) => {
+    const preferences = getPreferences(isDark);
     return (
         <>
             {isDark ? <Darklogo className='logo'/> : <Lightlogo className='logo'/> }
@@ -27,13 +29,15 @@ const Sidebar = ({ isDark, onThemeChanged }: sidebarprops) => {
                     </ListSubheader>
                 }
             >
-                {menuItems.map((item, index) => {
+                {menuItems.map((item) => {
                     return (
                         <SidebarItem
                             key={item.id}
-                            active={index === 1}
+                            active={activeItem === item.label}
                             label={item.label}
                             icon={item.icon}
+                            isDark={isDark}
+                            onItemChanged={onItemChanged}
                         />
 
                     )
@@ -50,15 +54,16 @@ const Sidebar = ({ isDark, onThemeChanged }: sidebarprops) => {
                     </ListSubheader>
                 }
             >
-                {preferences.map((item, index) => {
+                {preferences.map((item) => {
                     return (
                         <SidebarItem
                             key={item.id}
-                            active={index === 1}
+                            active={activeItem === item.label}
                             label={item.label}
                             icon={item.icon}
                             isDark={isDark}
                             onThemeChanged={onThemeChanged}
+                            onItemChanged={onItemChanged}
                         />
 
                     )
